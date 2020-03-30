@@ -21,3 +21,7 @@ Route::prefix('reservations')->group(function () {
     Route::post('{reservation}', 'ReservationController@update');
     Route::delete('{reservation}', 'ReservationController@delete');
 });
+
+Route::get('price/{accommodation}', function (\Domain\Price\PriceCalculator $accommodation) {
+    dd($accommodation);
+});
