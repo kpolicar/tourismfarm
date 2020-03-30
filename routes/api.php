@@ -22,6 +22,7 @@ Route::prefix('reservations')->group(function () {
     Route::delete('{reservation}', 'ReservationController@delete');
 });
 
-Route::get('price/{accommodation}', function (\Domain\Price\PriceCalculator $accommodation) {
-    dd($accommodation);
+Route::get('price/{accommodation}', function (Request $request, \App\Accommodation $accommodation) {
+    $calculator = $accommodation->calculator();
+    return $calculator->calc($request->get('modifier'));
 });

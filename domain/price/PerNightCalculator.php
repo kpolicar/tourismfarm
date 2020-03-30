@@ -2,10 +2,10 @@
 
 namespace Domain\Price;
 
-class PerNightCalculator implements PriceCalculator
+class PerNightCalculator
 {
-    public function calculate()
+    public function calculate($nights)
     {
-
+        return $nights;
     }
 }

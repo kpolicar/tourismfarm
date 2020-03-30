@@ -2,10 +2,10 @@
 
 namespace Domain\Price;
 
-class PerPersonCalculator extends PriceCalculator
+class PerPersonCalculator
 {
-    public function calculate()
+    public function calc($persons)
     {
-
+        return $persons;
     }
 }
