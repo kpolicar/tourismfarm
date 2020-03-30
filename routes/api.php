@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::prefix('reservations')->group(function () {
+    Route::get('/', 'ReservationController@list');
+    Route::post('/', 'ReservationController@store');
+    Route::get('{reservation}', 'ReservationController@show');
+    Route::post('{reservation}', 'ReservationController@update');
+    Route::delete('{reservation}', 'ReservationController@delete');
 });
