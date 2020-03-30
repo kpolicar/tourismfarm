@@ -4,8 +4,8 @@ namespace Domain\Price;
 
 class PerPersonCalculator
 {
-    public function calc($persons)
+    public function calc($base, $duration, $persons)
     {
-        return $persons;
+        return $base * $duration * $persons;
     }
 }
