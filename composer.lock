@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "476f1407499b53efcdddcea9d46be2dd",
+    "content-hash": "24b06e61813378419360df49b53744f5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1084,11 +1084,16 @@
         {
             "name": "laravel/nova",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:kpolicar/nova.git",
+                "reference": "b9070f4141eea569b5815a9839e262758fc016c9"
+            },
             "dist": {
-                "type": "path",
-                "url": "./nova",
-                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/kpolicar/nova/zipball/b9070f4141eea569b5815a9839e262758fc016c9",
+                "reference": "b9070f4141eea569b5815a9839e262758fc016c9",
+                "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "~1.0",
@@ -1142,7 +1147,12 @@
             "keywords": [
                 "admin",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/kpolicar/nova/tree/master",
+                "issues": "https://github.com/kpolicar/nova/issues"
+            },
+            "time": "2020-03-31T18:38:59+00:00"
         },
         {
             "name": "laravel/slack-notification-channel",
@@ -6018,7 +6028,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravel/nova": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
