@@ -22,10 +22,12 @@ Route::prefix('reservations')->group(function () {
     Route::delete('{reservation}', 'ReservationController@delete');
 });
 
-Route::get('price/{accommodation}', function (Request $request, \App\Accommodation $accommodation) {
-    $calculator = $accommodation->calculator();
-    return $calculator->calc(
-        $request->get('modifier'),
-        $request->get('duration'),
-        $accommodation->price);
+Route::get('prices', function () {
+    return [
+        'camp' => [
+            'type' => 'per-person',
+            'base' => 10,
+            'tax' => 4,
+        ],
+    ];
 });
