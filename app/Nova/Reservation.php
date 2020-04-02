@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\DateRangeFilter;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
@@ -27,7 +28,7 @@ class Reservation extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -35,7 +36,7 @@ class Reservation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'email',
     ];
 
     /**
@@ -53,6 +54,7 @@ class Reservation extends Resource
             new Panel('Guest information', $this->guestFields()),
 
             Currency::make('Price', 'price')
+                ->help('The price is calculated upon creation')
                 ->format('sl-SI')
                 ->hideWhenCreating(),
         ];
@@ -120,5 +122,10 @@ class Reservation extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    public function subtitle()
+    {
+        return "From: {$this->resource->from->format('Y-m-d')} to {$this->resource->to->format('Y-m-d')}";
     }
 }
