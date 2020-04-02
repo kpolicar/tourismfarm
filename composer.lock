@@ -1087,12 +1087,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:kpolicar/nova.git",
-                "reference": "b9070f4141eea569b5815a9839e262758fc016c9"
+                "reference": "bd9d24da7a7ed143c4dc3221381897d794900b6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kpolicar/nova/zipball/b9070f4141eea569b5815a9839e262758fc016c9",
-                "reference": "b9070f4141eea569b5815a9839e262758fc016c9",
+                "url": "https://api.github.com/repos/kpolicar/nova/zipball/bd9d24da7a7ed143c4dc3221381897d794900b6e",
+                "reference": "bd9d24da7a7ed143c4dc3221381897d794900b6e",
                 "shasum": ""
             },
             "require": {
