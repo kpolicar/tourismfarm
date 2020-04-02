@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     protected $guarded = ['price'];
+
+    protected $dates = ['from', 'to'];
 }
