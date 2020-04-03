@@ -24,10 +24,15 @@ Route::prefix('reservations')->group(function () {
 
 Route::get('prices', function () {
     return [
-        'camp' => [
+        'camping' => [
             'type' => 'per-person',
             'base' => 10,
             'tax' => 4,
+        ],
+        'grand-apartment' => [
+            'type' => 'per-night',
+            'base' => 60,
+            'tax' => 10,
         ],
     ];
 });
