@@ -2,7 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\InquiryApprove;
 use App\Nova\Filters\DateRangeFilter;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
@@ -49,6 +51,7 @@ class Inquiry extends Resource
     {
         return [
             ID::make()->sortable(),
+            Boolean::make('Approved', 'is_approved'),
 
             new Panel('Booking details', $this->bookingFields()),
             new Panel('Guest information', $this->guestFields()),
@@ -121,7 +124,9 @@ class Inquiry extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new InquiryApprove()
+        ];
     }
 
     public function subtitle()
