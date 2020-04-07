@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\Inquired;
 use App\Inquiry;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,9 @@ class InquiryController extends Controller
 
     public function store(Request $request)
     {
-        return Inquiry::create($request->all());
+        event(new Inquired($inquiry = Inquiry::create($request->all())));
+
+        return $inquiry;
     }
 
     public function list()

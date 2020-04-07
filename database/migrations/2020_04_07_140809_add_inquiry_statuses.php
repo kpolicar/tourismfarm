@@ -9,7 +9,7 @@ class AddInquiryStatuses extends Migration
     public function up()
     {
         Schema::table('inquiries', function (Blueprint $table) {
-            $table->boolean('is_confirmed')->default(0);
+            $table->boolean('is_verified')->default(0);
             $table->boolean('is_approved')->default(0);
         });
     }
@@ -17,7 +17,7 @@ class AddInquiryStatuses extends Migration
     public function down()
     {
         Schema::table('inquiries', function (Blueprint $table) {
-            $table->dropColumn(['is_confirmed', 'is_approved']);
+            $table->dropColumn(['is_verified', 'is_approved']);
         });
     }
 }
