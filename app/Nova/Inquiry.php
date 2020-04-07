@@ -14,14 +14,14 @@ use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
-class Reservation extends Resource
+class Inquiry extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\\Reservation';
+    public static $model = 'App\\Inquiry';
 
     /**
      * The single value that should be used to represent the resource when being displayed.

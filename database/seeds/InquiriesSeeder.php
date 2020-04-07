@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ReservationsSeeder extends Seeder
+class InquiriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class ReservationsSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Reservation::class, 10)->create();
+        factory(\App\Inquiry::class, 10)->create();
     }
 }

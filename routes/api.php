@@ -14,12 +14,12 @@ use Illuminate\Http\Request;
 */
 
 
-Route::prefix('reservations')->group(function () {
-    Route::get('/', 'ReservationController@list');
-    Route::post('/', 'ReservationController@store');
-    Route::get('{reservation}', 'ReservationController@show');
-    Route::post('{reservation}', 'ReservationController@update');
-    Route::delete('{reservation}', 'ReservationController@delete');
+Route::prefix('inquiries')->group(function () {
+    Route::get('/', 'InquiryController@list');
+    Route::post('/', 'InquiryController@store');
+    Route::get('{inquiry}', 'InquiryController@show');
+    Route::post('{inquiry}', 'InquiryController@update');
+    Route::delete('{inquiry}', 'InquiryController@delete');
 });
 
 Route::get('prices', function () {
@@ -35,4 +35,8 @@ Route::get('prices', function () {
             'tax' => 10,
         ],
     ];
+});
+
+Route::post('inquiry', function (\Illuminate\Http\Request $request) {
+    return $request->all();
 });

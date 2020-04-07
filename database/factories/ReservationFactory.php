@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Reservation::class, function (Faker $faker) {
+$factory->define(App\Inquiry::class, function (Faker $faker) {
     $duration = $faker->numberBetween(0, 10);
     $from = $faker->dateTime();
     $to = $from->add(new DateInterval("P{$duration}D"));
