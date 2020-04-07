@@ -5,12 +5,11 @@ namespace App\Events;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class Verified
+class Verified implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -24,6 +23,6 @@ class Verified
 
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('inquiry.'.$this->inquiry->id);
     }
 }
