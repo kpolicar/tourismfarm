@@ -21,6 +21,9 @@ Route::prefix('inquiries')->group(function () {
     Route::get('{inquiry}', 'InquiryController@show');
     Route::post('{inquiry}', 'InquiryController@update');
     Route::delete('{inquiry}', 'InquiryController@delete');
+
+    Route::get('/verify/{inquiry}', 'VerificationController@verify')->name('verification.verify');
+    Route::get('/verify/resend/{inquiry}', 'VerificationController@resend')->name('verification.resend');
 });
 
 Route::get('prices', function () {
