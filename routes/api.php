@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Middleware\FormatInquiryData;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Http\Request;
 
 Route::prefix('inquiries')->group(function () {
     Route::get('/', 'InquiryController@list');
-    Route::post('/', 'InquiryController@store');
+    Route::post('/', 'InquiryController@store')->middleware(FormatInquiryData::class);
     Route::get('{inquiry}', 'InquiryController@show');
     Route::post('{inquiry}', 'InquiryController@update');
     Route::delete('{inquiry}', 'InquiryController@delete');
@@ -35,8 +36,4 @@ Route::get('prices', function () {
             'tax' => 10,
         ],
     ];
-});
-
-Route::post('inquiry', function (\Illuminate\Http\Request $request) {
-    return $request->all();
 });
