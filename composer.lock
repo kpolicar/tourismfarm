@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24b06e61813378419360df49b53744f5",
+    "content-hash": "16ab224e86260fb783307010ad9610f7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -785,6 +785,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -831,6 +832,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -1152,7 +1154,7 @@
                 "source": "https://github.com/kpolicar/nova/tree/master",
                 "issues": "https://github.com/kpolicar/nova/issues"
             },
-            "time": "2020-03-31T18:38:59+00:00"
+            "time": "2020-04-02T17:14:30+00:00"
         },
         {
             "name": "laravel/slack-notification-channel",
