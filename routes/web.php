@@ -16,11 +16,3 @@ use App\Events\Verified;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/test', function () {
-
-    event(new Verified($inquiry = \App\Inquiry::first()));
-
-    return $inquiry;
-});
-

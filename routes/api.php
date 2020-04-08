@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\Verified;
 use Illuminate\Http\Request;
 use App\Http\Middleware\FormatInquiryData;
 

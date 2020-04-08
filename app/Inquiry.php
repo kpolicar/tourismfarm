@@ -29,7 +29,7 @@ class Inquiry extends Model implements MustVerifyEmail
 
     public function markEmailAsVerified()
     {
-        $this->is_verified = true;
+        return $this->is_verified = true;
     }
 
     public function sendEmailVerificationNotification()

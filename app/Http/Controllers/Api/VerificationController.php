@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\Verified;
 use App\Http\Controllers\Controller;
 use App\Inquiry;
-use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 
 class VerificationController extends Controller
@@ -23,10 +23,10 @@ class VerificationController extends Controller
         }
 
         if ($inquiry->markEmailAsVerified()) {
-            event(new Verified($request->user()));
+            event(new Verified($inquiry));
         }
 
-        return $this->response(true);
+        return $inquiry;
     }
 
     public function resend(Request $request, Inquiry $inquiry)
