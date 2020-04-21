@@ -14,6 +14,7 @@ class Inquiry extends Model implements MustVerifyEmail
 
     protected $dates = ['from', 'to'];
 
+
     protected static function boot()
     {
         parent::boot();
@@ -30,6 +31,11 @@ class Inquiry extends Model implements MustVerifyEmail
     public function markEmailAsVerified()
     {
         return $this->is_verified = true;
+    }
+
+    public function accommodation()
+    {
+        return $this->belongsTo(Accommodation::class);
     }
 
     public function sendEmailVerificationNotification()

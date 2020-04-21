@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\InquiryApprove;
 use App\Nova\Filters\DateRangeFilter;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
@@ -67,6 +68,7 @@ class Inquiry extends Resource
     public function bookingFields()
     {
         return [
+            BelongsTo::make('Accommodation', 'accommodation'),
             Date::make('Check-in', 'from')->sortable(),
             Date::make('Check-out', 'to'),
             Number::make('Adults', 'adults'),

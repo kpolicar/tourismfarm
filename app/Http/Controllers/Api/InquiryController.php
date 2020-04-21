@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Accommodation;
 use App\Events\Inquired;
 use App\Inquiry;
 use Illuminate\Http\Request;
@@ -11,7 +12,12 @@ class InquiryController extends Controller
 
     public function store(Request $request)
     {
-        event(new Inquired($inquiry = Inquiry::create($request->all())));
+        $accommodation = Accommodation::findByCode($request->get('accommodation'));
+        $inquiry = Inquiry::make($request->except('accommodation'));
+        $inquiry->accommodation()->associate($accommodation);
+        $inquiry->save();
+
+        event(new Inquired($inquiry));
 
         return $inquiry;
     }

@@ -18,6 +18,11 @@ class Accommodation extends Model
     const GROUP_INDOOR = 'indoor';
 
 
+    public static function findByCode($code)
+    {
+        return static::where('code', $code)->first();
+    }
+
     public function getRouteKeyName()
     {
         return 'code';
