@@ -36,4 +36,9 @@ class Inquiry extends Model implements MustVerifyEmail
     {
         $this->notify(new Notifications\VerifyEmail);
     }
+
+    public function sendEmailApprovalNotification()
+    {
+        $this->notify(new Notifications\Approved);
+    }
 }

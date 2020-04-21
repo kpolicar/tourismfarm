@@ -2,13 +2,13 @@
 
 namespace App\Nova\Actions;
 
+use App\Inquiry;
 use Illuminate\Bus\Queueable;
 use Laravel\Nova\Actions\Action;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class InquiryApprove extends Action
 {
@@ -18,9 +18,12 @@ class InquiryApprove extends Action
 
     public function handle(ActionFields $fields, Collection $models)
     {
-        $models->each->update([
-            'is_approved' => true,
-        ]);
+        $models->each(function (Inquiry $model) {
+            $model->update([
+                'is_approved' => true,
+            ]);
+            $model->sendEmailApprovalNotification();
+        });
     }
 
     public function fields()

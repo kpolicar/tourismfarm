@@ -51,7 +51,8 @@ class Inquiry extends Resource
     {
         return [
             ID::make()->sortable(),
-            Boolean::make('Approved', 'is_approved'),
+            Boolean::make('Approved', 'is_approved')
+                ->help('Warning: modifying the value here will not notify the guest!'),
 
             new Panel('Booking details', $this->bookingFields()),
             new Panel('Guest information', $this->guestFields()),
